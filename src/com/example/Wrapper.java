@@ -30,12 +30,22 @@ public class Wrapper <E> {
 
         Wrapper<?> wrapper = (Wrapper<?>) o;
 
-        return e != null ? e.equals(wrapper.e) : wrapper.e == null;
+        //return e != null ? e.equals(wrapper.e) : wrapper.e == null;
+        if (e != null){
+            return e.equals(wrapper.e);
+        } else {
+            return wrapper.e == null;
+        }
     }
 
     @Override
     public int hashCode() {
-        return e != null ? e.hashCode() : 0;
+        //return e != null ? e.hashCode() : 0;
+        if (e != null){
+            return e.hashCode();
+        } else {
+            return 0;
+        }
     }
 
     @Override
